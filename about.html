@@ -28,7 +28,14 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    <script src="assets/js/modernizr.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script	src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/3.0.3a/ekko-lightbox.min.js"></script>
+    <script	src="https://rawgit.com/GoogleChrome/webrtc/master/samples/web/js/adapter.js"></script>
+    <!--<script src="assets/js/modernizr.js"></script>-->
+    <script src="assets/js/kurento-utils.js"></script>
+    <script src="assets/js/console.js"></script>
+    <script src="assets/js/index.js"></script>
   </head>
 
   <body>
@@ -75,17 +82,28 @@
 	 <div class="container mtb">
 	 	<div class="row">
             <br/>
-	 		<div class="col-lg-6">
-	 			<img class="img-responsive" src="assets/img/avatar.png" alt="">
+	 		<div class="col-md-5">
+                <video class="img-responsive" id="videoOutput" autoplay="" width="480px" height="360px" poster="assets/img/avatar.png"></video>
+                 <!-- <img class="img-responsive" src="assets/img/avatar.png" alt=""> -->
+  				<p>
+                  <div class="col-md-6" style="padding-left:0; padding-right:0;">
+                    <a id="start" href="#" class="btn btn-theme" onclick="start(); return false;"><span
+ 					class="glyphicon glyphicon-play"></span> Try Now!</a>&nbsp;<a id="stop" href="#" class="btn btn-theme" onclick="stop(); return false;" disabled="disabled"><span
+ 					class="glyphicon glyphicon-stop"></span> Stop</a>
+                  </div>
+                  <div class="col-md-6" style="padding-left:0; padding-right:0;">
+                    <small>Only available in some browsers (Chrome, Firefox)</small>
+                  </div>
+                 </p>
 	 		</div>
-	 		
+	 		<br/>
 	 		<div class="col-lg-6">
 		 		<h4>More About Our Product</h4>
+                <br/>
                 <p>With <strong>WalKidsLike</strong>, parents can easily plan and customize travelling experience, choosing the most suitable places to visit with their children.</p>
                 <p>For kids, <strong>WalKidsLike</strong> is a travel companion and a learning environment. Using Augmented Reality technology, <strong>WalKidsLike</strong> will help youngsters knowing about specific places, interacting with the surroundings and having lots of fun!</p>
                 <p>For your family, <strong>WalKidsLike</strong> is the best way to avoid complaining, exhausting trips full of headaches.</p>
                 <p><strong>Enjoy family trips with joy!</strong></p>
- 				<p><br/><a href="contact.html" class="btn btn-theme">Contact Us</a></p>
 	 		</div>
 	 	</div><!--/row -->
 	 </div><!--/container -->
@@ -184,6 +202,13 @@
 	 		</div><!--/row -->
 	 	</div><!--/container -->
 	 </div><!--/twrap -->
+     
+     <div class="row" style="display:none">
+		<div class="col-md-12">
+			<label class="control-label" for="console">Console</label>
+			<div id="console"></div>
+		</div>
+     </div>
 	 
 	<!-- *****************************************************************************************************************
 	 OUR CLIENTS
